@@ -5,9 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import hrm.neotech.utils.BaseClass;
+import hrm.neotech.utils.CommonMethods;
 import hrm.neotech.utils.ConfigsReader;
 
-public class Test1_loginInvalidValue extends BaseClass {
+public class Test1_login extends CommonMethods {
+
 	
 	public void LoginInvalidValue (WebDriver driver)throws InterruptedException {
  

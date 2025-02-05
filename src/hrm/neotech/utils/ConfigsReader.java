@@ -31,7 +31,7 @@ public class ConfigsReader {
 	 * @param key
 	 */
 	public static  String getProperty(String key) {
-		return prop.getProperty(key);
+	        return prop.getProperty(key);
 	}
 	
 	

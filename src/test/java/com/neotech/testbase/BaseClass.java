@@ -1,15 +1,22 @@
-package hrm.neotech.utils;
+package com.neotech.testbase;
+
 
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+
+import com.neotech.utils.ConfigsReader;
+import com.neotech.utils.Constants;
 
 public class BaseClass {
 	
 	public static WebDriver driver;
 
+	@BeforeMethod(alwaysRun=true)
 	public static void setUp() {
 		
 		ConfigsReader.readProperties(Constants.CONFIGURATION_FILEPATH);
@@ -33,13 +40,13 @@ public class BaseClass {
 
 		}
 		
-		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Constants.IMPLICIT_WAIT_TIME));
 		String url = ConfigsReader.getProperty("url");
 		driver.get(url);
 	}
 	
+	@AfterMethod(alwaysRun=true)
 	public static void tearDown()
 	{
 		if(driver != null)

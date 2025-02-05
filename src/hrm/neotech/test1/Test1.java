@@ -46,7 +46,7 @@ public class Test1 extends BaseClass {
 		
 		
 		//Login with Invalid Value
-		Test1_loginInvalidValue testerLoginInvalidValue=new Test1_loginInvalidValue();
+		Test1_login testerLoginInvalidValue=new Test1_login();
 		testerLoginInvalidValue.LoginInvalidValue(driver);
 	
 		Thread.sleep(2000);
